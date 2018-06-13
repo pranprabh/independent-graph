@@ -1,0 +1,57 @@
+.companyLabel{
+    text-align: center;
+}
+#uploadConatiner{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+
+#created{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+
+#container {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#chartHeaders{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 100px;
+    border: 0px solid #ddd;
+    background-color: lightblue;
+    padding: 8px;
+}
+
+select, input{
+    font-size: 15px;
+    font-style: italic;
+    font-family: cursive;
+}
+td{
+    font-size: 15px;
+    font-style: italic;
+    font-family: cursive;
+    border: 0px solid #ddd;
+    background-color: lightblue;
+    padding: 8px;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.modal-body button{
+    margin-left : 20px;
+}

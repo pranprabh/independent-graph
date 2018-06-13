@@ -1,0 +1,89 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<meta charset="UTF-8">
+<html>
+<head>
+    <!-- jQuery -->    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    
+    <!-- amCharts -->
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+    <!-- bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Custom js css -->
+    <script src="main-2.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+    <div>
+        <h2 class="companyLabel">HABits lab</h2>
+    </div>
+
+    <div id="uploadConatiner">
+        <table id="container">
+            <tr>
+                <td>
+                    <label>Upload File:</label>
+                </td>
+                <td>
+                    <input type="file" id="fileUpload" />
+                </td>
+                <td>
+                    <input type="button" id="upload" value="Upload" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="chartContainer" style="display: none;">
+        <div id="chartHeaders">
+            <label>Select Headers:</label>
+            <select class="form-group" id="y-labels" onchange="plotGraph()" style="">
+                <option value="0">Select header:</option>
+            </select>
+            <hr/>
+            <div id="chart" style=" width: 100%; height: 500px;" onClick="getxVal()" onmousedown="getxValBegTag()" onmouseup="getxValEndTag()"></div>
+            <div id="annotationEdit">
+                <div id="annotationEditable">
+                    <a href="#" id="edit" data-type="text" data-placement="right" data-title="Enter username"></a>
+                </div>
+            </div>
+            <div id="exportdiv" ></div>
+        </div>
+        <hr/>
+        <div id="csvDownloadContainer" style="display: none">
+            <a href='#' onclick='downloadCSV({ filename: "data.csv" });'>Download CSV</a>
+        </div>
+    </div>
+    <div id="annModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div>
+                        <div class="form-group">
+                            <label for="usr">Label:</label>
+                            <input type="text" class="form-control" id="annLabel">
+                            <input type="hidden" id="selectedAnn" value="">
+                            <input type="hidden" id="guideDetails" value="" data-guide="">
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger pull-right" onClick='deleteAnnotation()'><span class="glyphicon glyphicon-trash"></span></button>
+                        <button type="button" class="btn btn-success pull-right" onClick='submitModal()'><span class="glyphicon glyphicon-ok"></span></button>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
